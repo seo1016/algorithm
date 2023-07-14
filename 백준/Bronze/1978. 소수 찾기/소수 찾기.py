@@ -1,13 +1,11 @@
-n = int(input())
-m = list(map(int, input().split()))
-b = 0
-for i in m:
-    a = 0
-    for j in range(1, i+1):
+t = int(input())
+n = list(map(int, input().split()))
+plus = 0
+for i in n:
+    cnt = 0
+    for j in range(2, i):
         if i%j == 0:
-            a += 1
-        else:
-            continue
-    if a == 2:
-        b += 1
-print(b)
+            cnt += 1
+    if cnt == 0 and i != 1:
+        plus += 1
+print(plus)
