@@ -11,7 +11,7 @@ for i in range(2, n+1, 2):
 
     for j in range(1, nCopy+1):
         for k in range(nCopy-1, 0, -1):
-            if k-j>=2 and j+k==nCopy and j!=0 and k!=0:
+            if k-j>=2 and j+k==nCopy:
                 cnt += 1
 
 print(cnt)
