@@ -1,2 +1,2 @@
-a = int(input())
-print(a*4)
+n = int(input())
+print(n*4)
