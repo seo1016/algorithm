@@ -3,16 +3,13 @@ import sys
 input = sys.stdin.readline
 
 N = int(input())
-string = '666'
 cnt = 0
+num = 666
 
 while True:
-    if '666' in string:
+    if '666' in str(num):
         cnt += 1
-
-    if cnt == N:
-        print(string)
-        break
-    string_int = int(string)
-    string_int += 1
-    string = str(string_int)
+        if cnt == N:
+            print(num)
+            break
+    num += 1
