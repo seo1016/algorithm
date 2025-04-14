@@ -17,14 +17,11 @@ dic = {
     '9': 'nine'
 }
 
-arr = []
-for i in range(M, N+1):
-    word = ' '.join(dic[d] for d in str(i))
-    arr.append((word, i))
+arr = list(range(M, N + 1))
 
-arr.sort()
+arr.sort(key=lambda x: ' '.join(dic[d] for d in str(x)))
 
 for i in range(len(arr)):
-    print(arr[i][1], end=' ')
+    print(arr[i], end=' ')
     if (i + 1) % 10 == 0:
         print()
