@@ -1,10 +1,13 @@
 def solution(participant, completion):
+    from collections import defaultdict
     
-    participant.sort()
-    completion.sort()
+    counter = defaultdict(int)
     
-    for i in range(len(participant)-1):
-        if participant[i] != completion[i]:
-            return participant[i]
+    for p in participant:
+        counter[p] += 1
+    for c in completion:
+        counter[c] -= 1
         
-    return participant[-1]
+    for name in counter:
+        if counter[name] > 0:
+            return name
