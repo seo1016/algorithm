@@ -1,11 +1,8 @@
 def solution(nums):
-    answer = 0
-    head_list = len(nums)
-    head_set = len(set(nums))
-    
-    if head_list // 2 < head_set:
-        answer = head_list // 2
+    length = len(nums)
+    nums = set(nums)
+    set_length = len(nums)
+    if length//2 < set_length:
+        return length//2
     else:
-        answer = head_set
-        
-    return answer
+        return set_length
