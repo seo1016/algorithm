@@ -1,18 +1,18 @@
-t = int(input())
-b = 0
-arr = []
-for i in range(t):
-    m = 0
-    a = input()
-    arr.clear()
-    for i in range(len(a)):
-        if i == 0:
-            arr.append(a[i])
-        elif a[i] in arr and a[i] != a[i-1]:
-            m += 1
-            break
+N = int(input())
+
+cnt = 0
+for _ in range(N):
+    word = input()
+    before = word[0]
+    arr = [before]
+    for i in word:
+        if before == i:
+            continue
+        elif before != i and i not in arr:
+            arr.append(i)
+            before = i
         else:
-            arr.append(a[i])
-    if m == 0:
-        b += 1
-print(b)
+            cnt += 1
+            break
+
+print(N-cnt)
