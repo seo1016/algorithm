@@ -1,39 +1,13 @@
+dic = {'A+': 4.5, 'A0': 4.0, 'B+': 3.5, 'B0': 3.0, 'C+': 2.5, 'C0': 2.0, 'D+': 1.5, 'D0': 1.0, 'F': 0.0}
 arr = []
-n = 0
-m = 0
-for i in range(20):
-    a, b, c = input().split()
-    b = float(b)
-    if c == 'A+':
-        n += b*4.5
-        m += b
-    elif c == 'A0':
-        n += b*4.0
-        m += b
-    elif c == 'B+':
-        n += b*3.5
-        m += b
-    elif c == 'B0':
-        n += b*3.0
-        m += b
-    elif c == 'C+':
-        n += b*2.5
-        m += b
-    elif c == 'C0':
-        n += b*2.0
-        m += b
-    elif c == 'D+':
-        n += b*1.5
-        m += b
-    elif c == 'D0':
-        n += b*1.0
-        m += b
-    elif c == 'F':
-        n += b*0.0
-        m += b
-    elif c == 'P':
+summ = 0
+
+for _ in range(20):
+    subject, credit, grade = map(str, input().split())
+    if grade == 'P':
         continue
-if m == 0:
-    print("%.6f" %m)
-else:
-    print("%.6f" %(n/m))
+    credit = float(credit)
+    summ += credit
+    arr.append(credit * dic[grade])
+
+print(round(sum(arr)/summ, 6))
