@@ -3,8 +3,7 @@ def solution(a, b, n):
     remain = 0
     while True:
         if n >= a:
-            if n%a != 0:
-                remain += n%a
+            remain += n%a
             exchanged = (n//a)*b
             answer += exchanged
             n = exchanged
